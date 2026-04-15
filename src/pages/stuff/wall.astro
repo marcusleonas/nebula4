@@ -1,0 +1,54 @@
+---
+import Base from "~/layouts/base.astro";
+
+const buttons = [
+  "https://file.garden/aXdBx1DU1BidR1It/madewithastro.png",
+  "https://file.garden/aXdBx1DU1BidR1It/bringbackmarquee.png",
+  "https://file.garden/aXdBx1DU1BidR1It/smile.png",
+  "https://file.garden/aXdBx1DU1BidR1It/roly-saynotoweb3.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/firefox.jpg",
+  "https://file.garden/aXdBx1DU1BidR1It/made_with_windows.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/lol.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/nowar.png",
+  "https://file.garden/aXdBx1DU1BidR1It/vscodium100.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/crawtterly-fuck-terfs.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/hatemac.jpg",
+  "https://file.garden/aXdBx1DU1BidR1It/dontfeedai.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/Censor_PGc.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/rainbow_bev.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/learn_html.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/antinazi.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/train.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/anythingbut.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/cheezit.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/weedpizzatoebeans_now_edit.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/nft.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/the%20void.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/hell0.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/ao3gif.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/thoughts_about_stuff.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/got_html.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/brolove.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/bollocks_now_95.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/aiPG3Ig.png",
+  "https://file.garden/aXdBx1DU1BidR1It/gaypride.gif",
+];
+---
+
+<Base title="the wall - n3bula.lol" pageTitle="the wall">
+  <section>
+    <h1>The Button Wall</h1>
+    <div class="content">
+      <p><a href="/stuff">&lt; Go Back to Stuff</a></p>
+
+      <p>
+        Most of these were stolen from other sites (sorry not sorry) or tumblr.
+        <strong><em>SEND ME UR BUTTONS NYOW</em></strong>.
+      </p>
+
+      <div class="flex-grid">
+        {buttons.map((button) => <img src={button} width="88" />)}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,46 @@
+---
+import "~/styles/reset.css";
+import "~/styles/style.css";
+
+import Head from "~/components/head.astro";
+
+interface Props {
+  title: string;
+  pageTitle: string;
+}
+const { title, pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head title={title} />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <aside>
+          <h1 class="page-title">{pageTitle}</h1>
+          <p class="bold">n3bula.lol</p>
+          <nav>
+            <a href="/">/home</a>
+            <a href="/profile">/profile</a>
+            <a href="/blog">/blog</a>
+            <a href="/bookmarks">/bookmarks</a>
+            <a href="/stuff">/stuff</a>
+          </nav>
+        </aside>
+        <div class="main-wrapper">
+          <main>
+            <slot />
+          </main>
+          <p class="scroll">SCROLL &gt;&gt;&gt;</p>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; 2026. mine not yours, do not steal!</p>
+        <p>Hosted on <a href="https://nekoweb.org">Nekoweb</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

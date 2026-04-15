@@ -1,0 +1,249 @@
+:root {
+  --primary: #0c3012;
+  --accent: #12461b;
+  --cream: #f7f6eb;
+}
+
+/* overrides */
+
+hr {
+  margin: 6px 0;
+  border: #0c3012 1px solid;
+}
+
+ol {
+  list-style: decimal-leading-zero;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  font-family: "Electrolize", sans-serif;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  font-weight: 800;
+}
+
+/* Layout */
+
+@keyframes bg {
+  0% {
+    background-position: 0px 0px;
+  }
+
+  100% {
+    background-position: 22px 22px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* THANKS TO THIS CODEPEN OMG: https://codepen.io/edmundojr/pen/xOYJGw */
+  /* Addded the anim myself tho hehe... */
+  --dot-bg: var(--cream);
+  --dot-color: var(--primary);
+  --dot-size: 1px;
+  --dot-space: 22px;
+  background:
+    linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+  background-position: 0px 0px;
+  animation: bg linear 2s infinite;
+
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 14px;
+}
+
+.wrapper {
+  max-width: 600px;
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  color: var(--primary);
+}
+
+.page-title::before {
+  content: ">";
+  display: inline-block;
+  overflow: hidden;
+  max-width: 1em;
+  transition:
+    max-width 0.5s ease,
+    margin 0.5s ease;
+  margin-right: 6px;
+}
+
+.page-title::after {
+  content: "🡥";
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-width 0.5s ease,
+    opacity 0.3s ease,
+    margin 0.5s ease;
+  margin-left: 0;
+}
+
+.page-title:hover::before {
+  max-width: 0;
+  margin-right: 0;
+}
+
+.page-title:hover::after {
+  max-width: 1em;
+  opacity: 1;
+  margin-left: 6px;
+}
+
+.main-wrapper {
+  position: relative;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 30px;
+  right: -50px;
+  transform: rotate(90deg);
+}
+
+main {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--primary);
+  position: relative;
+  scrollbar-width: none;
+}
+
+main .content {
+  padding: 6px;
+  background: var(--cream);
+}
+
+main .content p {
+  padding: 3px 0;
+}
+
+main .content p:first-child {
+  padding-top: 0;
+}
+
+main h1,
+main h2 {
+  background: var(--primary);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  padding-left: 6px;
+}
+
+main h1::before,
+main h2::before {
+  content: ">";
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  vertical-align: middle;
+  transition:
+    max-width 0.5s ease,
+    margin 0.5s ease;
+}
+
+main h1:hover::before,
+main h2:hover::before {
+  max-width: 1em;
+  margin-right: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 6px;
+  font-size: 12px;
+}
+
+.post {
+  max-width: 500px;
+  margin: 24px auto;
+}
+
+.post > .content {
+  padding: 12px;
+  background: var(--cream);
+  border: 1px solid var(--accent);
+}
+
+/* utils and misc */
+
+.twocols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.webring {
+  background: #fff;
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .scroll {
+    display: none;
+  }
+  .wrapper {
+    padding: 6px;
+  }
+}

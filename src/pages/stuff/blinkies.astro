@@ -1,0 +1,80 @@
+---
+import Base from "~/layouts/base.astro";
+
+const blinkies = [
+  "https://file.garden/aXdBx1DU1BidR1It/ilovetheinternet_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/haveaniceday_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/yaoi_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/kindagay_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/shinyobjects_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/cateyes_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/nobraincells_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/ff_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/piracy_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/ilovecss_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/nyan_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/loserandproud_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/gay_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/rawr_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/toomanytabs_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/okgay_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/ifeelsosigma_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/cinnamoroll_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/flins_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/neocities.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/fvckai_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/massiveconehead_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/roblox_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/sleepdeprived_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/iloveblinkies_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/explode_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/iheartmyheadphones_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/ilovemusic_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/usagi_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/prettyinpink_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/re2_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/re3_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/re4_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/chronicallyonline_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/ao3_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/alifewhatisthat_blinkie.webp",
+  "https://file.garden/aXdBx1DU1BidR1It/cantsleep_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/dontdomornings_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/atmylimit_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/unghh_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/fakedownloadbutton_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/iblockads_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/blackcats_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/imsilly_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/gaypride_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/wohmygoh_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/greenisbest_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/dablinkie_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/gayrightsimgay_blinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/stealthisblinkie.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/bad-website-design.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/masculinity.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/cringeisdead.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/goodieblink%20(31).gif",
+  "https://file.garden/aXdBx1DU1BidR1It/blinkiesCafe-8A.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/gamerselfdiagnosed.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/1braincell.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/respect.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/blinktune.gif",
+  "https://file.garden/aXdBx1DU1BidR1It/output_1769801054_6ece153e32a4446c994c70dbcd889a14.gif",
+];
+---
+
+<Base title="blinkies - n3bula.lol" pageTitle="blinkies">
+  <section>
+    <h1>Blinkies</h1>
+    <div class="content">
+      <p><a href="/stuff">&lt; Go Back to Stuff</a></p>
+
+      <p>Wow shiny...</p>
+      <div class="flex-grid">
+        {blinkies.map((blinkie) => <img src={blinkie} width="150" />)}
+      </div>
+    </div>
+  </section>
+</Base>

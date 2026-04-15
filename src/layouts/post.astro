@@ -1,0 +1,28 @@
+---
+import "~/styles/reset.css";
+import "~/styles/style.css";
+
+import Head from "~/components/head.astro";
+
+interface Props {
+  title: string;
+  pageTitle: string;
+}
+const { title, pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head title={title} />
+  </head>
+  <body>
+    <div class="post">
+      <div class="content"><slot /></div>
+      <footer>
+        <p>&copy; 2026. mine not yours, do not steal!</p>
+        <p>Hosted on <a href="https://nekoweb.org">Nekoweb</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
