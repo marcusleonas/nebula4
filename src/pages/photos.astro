@@ -1,0 +1,136 @@
+---
+import Base from "~/layouts/base.astro";
+import "glightbox/dist/css/glightbox.css";
+import { initLightbox } from "~/scripts/lightbox";
+
+const images: { src: string; alt: string }[] = [
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_0449.jpg",
+    alt: "the cologne cathedral",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_0504.jpg",
+    alt: "a small german street with a cute, tudor-style house",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_0720.jpg",
+    alt: "a picture of a duck walking around a fountain in london",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_0984.jpg",
+    alt: "a picture of a small street in riga",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_1075.jpg",
+    alt: "a picture of an overgrown wooden bridge in a lithuanian forest",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_1078.jpg",
+    alt: "a picture of a small, wooden bridge",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_1154.jpg",
+    alt: "a picture of a public park with lots of lavender and other flowers, with a block of flats in the background",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_1167.jpg",
+    alt: "a picture of my mum feeding some canadian geese",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_1219.jpg",
+    alt: "a picture of a traditional lighthouse from a boat",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_1675.jpg",
+    alt: "some cows in a field on a rainy and cloudy day",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_1878.jpg",
+    alt: "large stone staircase in a public park surrounded by trees",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2265.jpg",
+    alt: "a picture of a beach taken from up on a cliff",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2356.jpg",
+    alt: "my black & white tuxedo cat, cookie, sitting on the windowsill",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2438.jpg",
+    alt: "a muddy & flooded forest path in england",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2647.jpg",
+    alt: "a large path going through a valley in arundel",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2760.jpg",
+    alt: "a metal sculpture of a cat in marijampole, lithuania",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2766.jpg",
+    alt: "a small, man-made stream in a park with some ducks swimming in it",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2788.jpg",
+    alt: "a picture of a large lake from up on an observation tower in lithuania",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2832.jpg",
+    alt: "me standing sideways in the mirror, with the phone covering my face",
+  },
+  {
+    src: "https://file.garden/aXdBx1DU1BidR1It/pictures/IMG_2929.jpg",
+    alt: "a pond inside a forest with thousands of bluebells behind",
+  },
+];
+---
+
+<Base title="photos - n3bula.lol" pageTitle="photos">
+  <section>
+    <h1>Photo Album</h1>
+    <div class="content">
+      <p>
+        Some photos, taken by yours truly on my iPhone 14. Most of the images
+        are very compressed, so the quality isn't the best but you get the idea.
+      </p>
+      <hr />
+      <div class="photo-grid">
+        {
+          images.reverse().map((img) => (
+            <a
+              href={img.src}
+              target="_blank"
+              class="lightbox"
+              data-description={img.alt}
+              data-type="image"
+            >
+              <img src={img.src} alt={img.alt} class="photo" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+
+<script>
+  import { initLightbox } from "~/scripts/lightbox";
+  initLightbox();
+</script>

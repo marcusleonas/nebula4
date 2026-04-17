@@ -82,7 +82,7 @@ body {
 }
 
 .wrapper {
-  max-width: 600px;
+  max-width: 650px;
   width: 100%;
 
   position: absolute;
@@ -94,6 +94,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
+  gap: 12px;
 }
 
 .page-title {
