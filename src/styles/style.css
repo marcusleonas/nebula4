@@ -211,10 +211,19 @@ footer {
   margin: 24px auto;
 }
 
-.post > .content {
+.post .content {
   padding: 12px;
   background: var(--cream);
   border: 1px solid var(--accent);
+}
+
+.post .content p {
+  padding: 6px 0;
+  line-height: 1.6;
+}
+
+.post .content p:first-child {
+  padding-top: 0;
 }
 
 /* utils and misc */
